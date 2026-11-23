@@ -512,7 +512,7 @@ dialog .close{float:right;background:none;border:1.5px solid var(--line);color:#
 </div>
 
 <dialog id="d-ml" aria-labelledby="d-ml-t"><button class="close" aria-label="Fermer">✕</button><h2 id="d-ml-t">Mentions légales</h2>
-  <h3>Éditeur du site</h3><p>FL AUTO (GARAGE STAA), SARL au capital de 10 000 €, enseigne FL Auto, membre du réseau Top Garage. Siège : 585 rue Baron Dominique Larrey, 83210 La Farlède. SIREN 914 071 238 — SIRET 914 071 238 00028 — immatriculée au Registre national des entreprises. TVA intracommunautaire : FR58 914 071 238. Téléphone : 04 94 33 06 78. E-mail : <a href="mailto:flauto.garage83210@outlook.fr">flauto.garage83210@outlook.fr</a>. Directeurs de la publication : Fatima Hadjazi et Laurent Poizot, cogérants.</p>
+  <h3>Éditeur du site</h3><p>FL AUTO (GARAGE STAA), SARL au capital de 10 000 €, enseigne FL Auto, membre du réseau Top Garage. Siège : 585 rue Baron Dominique Larrey, 83210 La Farlède. SIREN 914 071 238 — SIRET 914 071 238 00028 — immatriculée au Registre national des entreprises. TVA intracommunautaire : FR58 914 071 238. Téléphone : 04 94 33 06 78. E-mail : <a href="mailto:flauto.topgarage83210@outlook.fr">flauto.topgarage83210@outlook.fr</a>. Directeurs de la publication : Fatima Hadjazi et Laurent Poizot, cogérants.</p>
   <h3>Hébergement</h3><p>GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
   <h3>Conception</h3><p>ZAHR — zahr.fr.</p>
   <h3>Propriété intellectuelle</h3><p>Les textes, le logo FL Auto et les visuels de ce site ne peuvent être réutilisés sans autorisation. La photo de la façade provient de la fiche Google du garage ; elle a été retouchée par ZAHR (véhicules et drapeau retirés du parvis). Polices Bebas Neue et Space Grotesk sous licence SIL Open Font License.</p>
@@ -521,7 +521,7 @@ dialog .close{float:right;background:none;border:1.5px solid var(--line);color:#
   <h3>Données collectées</h3><p>Uniquement ce que vous saisissez dans le formulaire de rendez-vous : nom, téléphone, véhicule, kilométrage (facultatif), prestation et créneau souhaités.</p>
   <h3>Pourquoi</h3><p>Pour vous recontacter et organiser votre rendez-vous, sur la base de votre consentement. Ces données ne sont ni vendues ni utilisées pour de la publicité.</p>
   <h3>Durée de conservation</h3><p>Le temps de traiter votre demande, puis 3 ans au plus si aucun rendez-vous n'a lieu.</p>
-  <h3>Vos droits</h3><p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données, ou retirer votre consentement, en appelant le 04 94 33 06 78, en écrivant à <a href="mailto:flauto.garage83210@outlook.fr">flauto.garage83210@outlook.fr</a> ou par courrier au garage (adresse dans les mentions légales). Vous pouvez aussi saisir la CNIL (cnil.fr).</p>
+  <h3>Vos droits</h3><p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données, ou retirer votre consentement, en appelant le 04 94 33 06 78, en écrivant à <a href="mailto:flauto.topgarage83210@outlook.fr">flauto.topgarage83210@outlook.fr</a> ou par courrier au garage (adresse dans les mentions légales). Vous pouvez aussi saisir la CNIL (cnil.fr).</p>
   <h3>Services tiers</h3><ul><li>Envoi du formulaire : FormSubmit (formsubmit.co), qui transmet votre demande par e-mail au garage, sans la conserver pour un autre usage. Seul le garage FL Auto reçoit vos informations.</li><li>Google Maps : chargé uniquement après votre accord.</li><li>Polices : fonts.bunny.net (sans cookie).</li><li>Animation 3D : bibliothèque Three.js chargée depuis cdnjs (sans cookie).</li></ul>
   <h3>Mineurs</h3><p>Le formulaire s'adresse aux personnes majeures. Une personne mineure doit obtenir l'accord d'un parent avant d'envoyer une demande.</p>
 </dialog>
@@ -889,11 +889,11 @@ $('#rdvform').addEventListener('submit',function(e){e.preventDefault();var msg=$
   st.classList.add('run');if(!RM){dayDial.sweep();hourDial.sweep();}
   var btn=$('.start');btn.disabled=true;msg.textContent='Envoi en cours…';
   var data={_subject:'Demande de RDV site — '+svcSel+' — '+dayDial.val.label+' '+hourDial.val.label,Prestation:svcSel,Jour:dayDial.val.label,Heure:hourDial.val.label,Nom:$('#nom').value.trim(),Telephone:$('#tel').value.trim(),Vehicule:$('#veh').value.trim(),Kilometrage:$('#km').value.trim()||'-',_template:'table',_captcha:'false'};
-  fetch('https://formsubmit.co/ajax/flauto.garage83210@outlook.fr',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)}).then(function(r){return r.json();}).then(function(j){
+  fetch('https://formsubmit.co/ajax/flauto.topgarage83210@outlook.fr',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)}).then(function(r){return r.json();}).then(function(j){
     if(!j||String(j.success)!=='true')throw 0;
     msg.className='formmsg ok';msg.textContent='Contact ! Votre demande ('+svcSel+', '+dayDial.val.label+' à '+hourDial.val.label+') est bien arrivée au garage. FL Auto vous rappelle pour confirmer le créneau.';
   }).catch(function(){
-    msg.className='formmsg err';msg.innerHTML='Calage moteur : la demande n\'a pas pu partir. Appelez le garage au <a href="tel:+33494330678">04 94 33 06 78</a> ou écrivez à <a href="mailto:flauto.garage83210@outlook.fr">flauto.garage83210@outlook.fr</a>.';
+    msg.className='formmsg err';msg.innerHTML='Calage moteur : la demande n\'a pas pu partir. Appelez le garage au <a href="tel:+33494330678">04 94 33 06 78</a> ou écrivez à <a href="mailto:flauto.topgarage83210@outlook.fr">flauto.topgarage83210@outlook.fr</a>.';
   }).then(function(){btn.disabled=false;});
 });
 })();
