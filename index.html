@@ -278,6 +278,11 @@ dialog .close{float:right;background:none;border:1.5px solid var(--line);color:#
 @media (prefers-reduced-motion: reduce){
   *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* fix: la rangée du bas de la boîte de vitesses (2, 4, 6) recevait mal les clics */
+.gears{position:absolute;inset:0;pointer-events:none;transform-style:preserve-3d}
+.gear{pointer-events:auto;transform:translate(-50%,-50%) translateZ(2px)}
+.slots-svg{pointer-events:none}
 </style>
 </head>
 <body>
